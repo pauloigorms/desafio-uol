@@ -30,7 +30,7 @@ type Mutation {
 }
 
 type Product {
-  _id: String!
+  _id: ID!
   description: String!
   is_active: Boolean!
   name: String!
@@ -42,7 +42,7 @@ type Product {
 
 type Query {
   product(_id: String!): Product!
-  products(filters: ListProduct): Product
+  products(filters: ListProduct!): Product
 }
 
 input UpdateProduct {

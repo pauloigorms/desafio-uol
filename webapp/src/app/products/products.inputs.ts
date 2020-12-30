@@ -30,8 +30,8 @@ export class CreateProduct {
 @InputType()
 export class ListProduct {
 
-    @Field({ nullable: true })
-    _id?: string;
+    @Field(() => String, { nullable: true })
+    _id?: Types.ObjectId;
 
     @Field({ nullable: true })
     sku?: string;

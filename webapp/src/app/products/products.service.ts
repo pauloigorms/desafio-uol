@@ -26,7 +26,7 @@ export class ProductsService {
         return this.productModel.findById(_id).exec();
     }
     
-    async list(filters: ListProduct) {
+    list(filters: ListProduct) {
         return this.productModel.find({ ...filters }).exec();
     }
 

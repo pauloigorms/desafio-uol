@@ -20,9 +20,11 @@ export class ProductsResolver {
         return this.productService.getById(_id);
     }
 
-    @Query(() => Product)
-    async products(@Args('filters', { nullable: true }) filters?: ListProduct, ) {
-        return this.productService.list(filters);
+    @Query(() => Product, { nullable: true })
+    async products(@Args('filters') filters?: ListProduct, ) {
+        const result = await this.productService.list(filters);
+        console.log(result)
+        return result;
     }
 
     @Mutation(() => Product)
