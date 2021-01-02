@@ -5,7 +5,8 @@ import { Product, ProductDocument } from './products.model'
 import { ProductsService } from './products.service'
 
 import {
-    ListProduct,
+    CreateProduct,
+    ListProducts,
 } from './products.inputs'
 
 @Resolver(() => Product)
@@ -15,9 +16,13 @@ export class ProductsResolver {
 
     @Query(() => [Product])
     async products(
-        @Args('filters', { nullable: true }) filters?: ListProduct, 
-    ) {
+        @Args('filters', { nullable: true }) filters?: ListProducts,) {
         return await this.productService.list(filters);
+    }
+
+    @Mutation(() => Product)
+    async nproduct(@Args('product') product?: CreateProduct) {
+        return this.productService.create(product);
     }
 
 }

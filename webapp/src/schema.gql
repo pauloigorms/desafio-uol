@@ -2,7 +2,17 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input ListProduct {
+input CreateProduct {
+  description: String
+  is_active: Boolean
+  name: String
+  price: Float
+  sku: String
+  status: Float
+  weigth: Float
+}
+
+input ListProducts {
   _id: String
   description: String
   is_active: Boolean
@@ -11,6 +21,10 @@ input ListProduct {
   sku: String
   status: Float
   weigth: Float
+}
+
+type Mutation {
+  nproduct(product: CreateProduct!): Product!
 }
 
 type Product {
@@ -25,5 +39,5 @@ type Product {
 }
 
 type Query {
-  products(filters: ListProduct): [Product!]!
+  products(filters: ListProducts): [Product!]!
 }

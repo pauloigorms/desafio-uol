@@ -5,7 +5,8 @@ import { Model, Types } from 'mongoose';
 import { Product, ProductDocument } from './products.model';
 
 import {
-    ListProduct,
+    CreateProduct,
+    ListProducts
 } from './products.inputs'
 
 @Injectable()
@@ -13,9 +14,14 @@ export class ProductsService {
 
     constructor(
         @InjectModel(Product.name) private productModel: Model<ProductDocument>,
-    ) {}   
+    ) {}
+
+    create(payload: CreateProduct) {
+        const product = new this.productModel(payload);
+        return product.save();
+    }
     
-    list(filters: ListProduct) {
+    list(filters: ListProducts) {
         return this.productModel.find({ ...filters }).exec();
     }
 

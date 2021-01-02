@@ -10,7 +10,8 @@ export class Product {
     _id: Types.ObjectId;
   
     @Field(() => String)
-    sku: String;
+    @Prop()
+    sku: string;
 
     @Field(() => String)
     @Prop()
