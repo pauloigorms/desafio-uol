@@ -6,7 +6,7 @@ import { ProductsService } from './products.service'
 
 import {
     CreateProduct,
-    ListProduct,
+    ListProducts,
     UpdateProduct
 } from './products.inputs'
 
@@ -15,31 +15,20 @@ export class ProductsResolver {
 
     constructor(private productService: ProductsService) {}
 
-    @Query(() => Product)
-    async product(@Args('_id', { type: () => String }) _id: Types.ObjectId) {
-        return this.productService.getById(_id);
-    }
-
-    @Query(() => Product, { nullable: true })
-    async products(@Args('filters') filters?: ListProduct, ) {
-        const result = await this.productService.list(filters);
-        console.log(result)
-        return result;
+    @Query(() => [Product])
+    async products(
+        @Args('filters', { nullable: true }) filters?: ListProducts,) {
+        return await this.productService.list(filters);
     }
 
     @Mutation(() => Product)
-    async createProduct(@Args('payload') payload: CreateProduct) {
-        return this.productService.create(payload);
+    async nproduct(@Args('product') product?: CreateProduct) {
+        return this.productService.create(product);
     }
 
     @Mutation(() => Product)
-    async updateProduct(@Args('payload') payload: UpdateProduct) {
-        return this.productService.update(payload);
-    }
-
-    @Mutation(() => Product)
-    async deleteProduct(@Args('_id', { type: () => String }) _id: Types.ObjectId) {
-        return this.productService.delete(_id);
+    async uproduct(@Args('product') product: UpdateProduct) {
+        return this.productService.update(product);
     }
 
 }

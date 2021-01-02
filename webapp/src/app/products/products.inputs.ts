@@ -4,54 +4,54 @@ import { Types } from 'mongoose';
 @InputType()
 export class CreateProduct {
 
-    @Field(() => String)
+    @Field(() => String, { nullable: true })
     sku?: string;
 
-    @Field(() => String)
-    name: string;
+    @Field(() => String, { nullable: true })
+    name?: string;
 
-    @Field(() => String)
-    description: string;
+    @Field(() => String, { nullable: true })
+    description?: string;
 
-    @Field(() => Boolean)
-    is_active: boolean;
+    @Field(() => Boolean, { nullable: true })
+    is_active?: boolean;
 
-    @Field(() => Number)
-    price: string;
+    @Field(() => Number, { nullable: true })
+    price?: number;
 
-    @Field(() => Number)
-    weigth: string;
+    @Field(() => Number, { nullable: true })
+    weigth?: number;
 
-    @Field(() => Number)
-    status: string;
-  
+    @Field(() => Number, { nullable: true })
+    status?: number;
+
 }
 
 @InputType()
-export class ListProduct {
+export class ListProducts {
 
     @Field(() => String, { nullable: true })
     _id?: Types.ObjectId;
 
-    @Field({ nullable: true })
+    @Field(() => String, { nullable: true })
     sku?: string;
 
-    @Field({ nullable: true })
+    @Field(() => String, { nullable: true })
     name?: string;
 
-    @Field({ nullable: true })
+    @Field(() => String, { nullable: true })
     description?: string;
 
-    @Field({ nullable: true })
+    @Field(() => Boolean, { nullable: true })
     is_active?: boolean;
 
-    @Field({ nullable: true })
+    @Field(() => Number, { nullable: true })
     price?: number;
 
-    @Field({ nullable: true })
+    @Field(() => Number, { nullable: true })
     weigth?: number;
 
-    @Field({ nullable: true })
+    @Field(() => Number, { nullable: true })
     status?: number;
 
 }
@@ -82,5 +82,4 @@ export class UpdateProduct {
 
     @Field(() => Number, { nullable: true })
     status?: number;
-
 }

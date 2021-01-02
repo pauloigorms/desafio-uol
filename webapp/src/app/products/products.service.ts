@@ -6,7 +6,7 @@ import { Product, ProductDocument } from './products.model';
 
 import {
     CreateProduct,
-    ListProduct,
+    ListProducts,
     UpdateProduct
 } from './products.inputs'
 
@@ -17,27 +17,17 @@ export class ProductsService {
         @InjectModel(Product.name) private productModel: Model<ProductDocument>,
     ) {}
 
-    create(payload: CreateProduct) {
-        const data = new this.productModel(payload);
-        return data.save();
-    }
-
-    getById(_id: Types.ObjectId) {
-        return this.productModel.findById(_id).exec();
+    create(product: CreateProduct) {
+        const model = new this.productModel(product);
+        return model.save();
     }
     
-    list(filters: ListProduct) {
+    list(filters: ListProducts) {
         return this.productModel.find({ ...filters }).exec();
     }
 
-    update(payload: UpdateProduct) {
-        return this.productModel
-          .findByIdAndUpdate(payload._id, payload, { new: true })
-          .exec();
-    }
-
-    delete(_id: Types.ObjectId) {
-        return this.productModel.findByIdAndDelete(_id).exec();
+    update(product: UpdateProduct) {
+        return this.productModel.findOneAndUpdate(product._id, {$set: product}, {useFindAndModify: false}).exec();
     }
 
 }

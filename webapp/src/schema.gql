@@ -3,16 +3,16 @@
 # ------------------------------------------------------
 
 input CreateProduct {
-  description: String!
-  is_active: Boolean!
-  name: String!
-  price: Float!
-  sku: String!
-  status: Float!
-  weigth: Float!
+  description: String
+  is_active: Boolean
+  name: String
+  price: Float
+  sku: String
+  status: Float
+  weigth: Float
 }
 
-input ListProduct {
+input ListProducts {
   _id: String
   description: String
   is_active: Boolean
@@ -24,13 +24,12 @@ input ListProduct {
 }
 
 type Mutation {
-  createProduct(payload: CreateProduct!): Product!
-  deleteProduct(_id: String!): Product!
-  updateProduct(payload: UpdateProduct!): Product!
+  nproduct(product: CreateProduct!): Product!
+  uproduct(product: UpdateProduct!): Product!
 }
 
 type Product {
-  _id: ID!
+  _id: String!
   description: String!
   is_active: Boolean!
   name: String!
@@ -41,8 +40,7 @@ type Product {
 }
 
 type Query {
-  product(_id: String!): Product!
-  products(filters: ListProduct!): Product
+  products(filters: ListProducts): [Product!]!
 }
 
 input UpdateProduct {
