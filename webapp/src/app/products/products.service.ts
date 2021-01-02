@@ -29,5 +29,9 @@ export class ProductsService {
     update(product: UpdateProduct) {
         return this.productModel.findOneAndUpdate({_id: product._id}, {$set: product}, {useFindAndModify: false}).exec();
     }
+
+    delete(id: Types.ObjectId) {
+        return this.productModel.findByIdAndDelete({_id: id}).exec();
+    }
     
 }

@@ -31,4 +31,9 @@ export class ProductsResolver {
         return this.productService.update(product);
     }
 
+    @Mutation(() => String)
+    async rproduct(@Args('id', { type: () => String }) id: Types.ObjectId) {
+        return this.productService.delete(id);
+    }
+
 }
