@@ -25,6 +25,7 @@ input ListProducts {
 
 type Mutation {
   nproduct(product: CreateProduct!): Product!
+  rproduct(id: String!): String!
   uproduct(product: UpdateProduct!): Product!
 }
 
