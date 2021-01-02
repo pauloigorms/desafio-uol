@@ -27,7 +27,7 @@ export class ProductsService {
     }
 
     update(product: UpdateProduct) {
-        return this.productModel.findOneAndUpdate(product._id, {$set: product}, {useFindAndModify: false}).exec();
+        return this.productModel.findOneAndUpdate({_id: product._id}, {$set: product}, {useFindAndModify: false}).exec();
     }
-
+    
 }
