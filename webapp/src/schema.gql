@@ -25,6 +25,7 @@ input ListProducts {
 
 type Mutation {
   nproduct(product: CreateProduct!): Product!
+  uproduct(product: UpdateProduct!): Product!
 }
 
 type Product {
@@ -40,4 +41,15 @@ type Product {
 
 type Query {
   products(filters: ListProducts): [Product!]!
+}
+
+input UpdateProduct {
+  _id: String!
+  description: String
+  is_active: Boolean
+  name: String
+  price: Float
+  sku: String
+  status: Float
+  weigth: Float
 }

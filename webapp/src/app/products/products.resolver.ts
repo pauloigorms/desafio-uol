@@ -7,6 +7,7 @@ import { ProductsService } from './products.service'
 import {
     CreateProduct,
     ListProducts,
+    UpdateProduct
 } from './products.inputs'
 
 @Resolver(() => Product)
@@ -23,6 +24,11 @@ export class ProductsResolver {
     @Mutation(() => Product)
     async nproduct(@Args('product') product?: CreateProduct) {
         return this.productService.create(product);
+    }
+
+    @Mutation(() => Product)
+    async uproduct(@Args('product') product: UpdateProduct) {
+        return this.productService.update(product);
     }
 
 }
