@@ -1,11 +1,14 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { Types } from 'mongoose';
+// import { ObjectId } from "bson";
+
+// const _id = new ObjectId()
 
 @InputType()
 export class CreateProduct {
 
     @Field(() => String, { nullable: true })
-    sku?: string;
+    sku?: Types.ObjectId;
 
     @Field(() => String, { nullable: true })
     name?: string;
@@ -30,8 +33,8 @@ export class CreateProduct {
 @InputType()
 export class ListProducts {
 
-    @Field(() => String, { nullable: true })
-    _id?: Types.ObjectId;
+    // @Field(() => String, { nullable: true })
+    // _id?: Types.ObjectId;
 
     @Field(() => String, { nullable: true })
     sku?: string;
@@ -59,8 +62,8 @@ export class ListProducts {
 @InputType()
 export class UpdateProduct {
 
-    @Field(() => String)
-    _id: Types.ObjectId;
+    // @Field(() => String)
+    // _id: Types.ObjectId;
 
     @Field(() => String, { nullable: true })
     sku?: string;
