@@ -1,5 +1,5 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Types } from 'mongoose';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql'
+import { Types } from 'mongoose'
 
 import { Product } from './products.model'
 import { ProductsService } from './products.service'
@@ -17,27 +17,27 @@ export class ProductsResolver {
 
     @Query(() => [Product])
     async products(@Args('filters', { nullable: true }) filters?: ListProducts) {
-        return await this.productService.list(filters);
+        return await this.productService.list(filters)
     }
 
     @Mutation(() => Product)
     async nproduct(@Args('product') product?: CreateProduct) {
-        return this.productService.create(product);
+        return await this.productService.create(product)
     }
 
     @Query(() => Product)
     async product(@Args('sku', { type: () => String }) sku: Types.ObjectId) {
-        return await this.productService.bySku(sku);
+        return await this.productService.bySku(sku)
     }    
 
     @Mutation(() => Product)
     async uproduct(@Args('product') product: UpdateProduct) {
-        return this.productService.update(product);
+        return await this.productService.update(product)
     }
 
-    // @Mutation(() => String)
-    // async rproduct(@Args('id', { type: () => String }) id: Types.ObjectId) {
-    //     return this.productService.delete(id);
-    // }
+    @Mutation(() => Boolean)
+    async rproduct(@Args('sku', { type: () => String }) sku: Types.ObjectId) {
+        return this.productService.delete(sku)
+    }
 
 }

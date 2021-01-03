@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateProduct {
+  description: String
+  is_active: Boolean
+  name: String
+  price: Float
+  sku: String
+  status: Float
+  weigth: Float
+}
+
+input ListProducts {
+  description: String
+  is_active: Boolean
+  name: String
+  price: Float
+  sku: String
+  status: Float
+  weigth: Float
+}
+
+type Mutation {
+  nproduct(product: CreateProduct!): Product!
+  rproduct(sku: String!): Boolean!
+  uproduct(product: UpdateProduct!): Product!
+}
+
+type Product {
+  description: String!
+  is_active: Boolean!
+  name: String!
+  price: Float!
+  sku: String!
+  status: Float!
+  weigth: Float!
+}
+
+type Query {
+  product(sku: String!): Product!
+  products(filters: ListProducts): [Product!]!
+}
+
+input UpdateProduct {
+  description: String
+  is_active: Boolean
+  name: String
+  price: Float
+  sku: String
+  status: Float
+  weigth: Float
+}
