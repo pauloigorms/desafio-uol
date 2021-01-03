@@ -1,7 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Types } from 'mongoose';
 
-import { Product, ProductDocument } from './products.model'
+import { Product } from './products.model'
 import { ProductsService } from './products.service'
 
 import {
@@ -28,13 +28,12 @@ export class ProductsResolver {
     @Query(() => Product)
     async product(@Args('sku', { type: () => String }) sku: Types.ObjectId) {
         return await this.productService.bySku(sku);
-    }
-    
+    }    
 
-    // @Mutation(() => Product)
-    // async uproduct(@Args('product') product: UpdateProduct) {
-    //     return this.productService.update(product);
-    // }
+    @Mutation(() => Product)
+    async uproduct(@Args('product') product: UpdateProduct) {
+        return this.productService.update(product);
+    }
 
     // @Mutation(() => String)
     // async rproduct(@Args('id', { type: () => String }) id: Types.ObjectId) {

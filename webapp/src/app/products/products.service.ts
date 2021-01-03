@@ -30,9 +30,10 @@ export class ProductsService {
         return this.productModel.findOne({sku: new ObjectId(sku)})
     }
 
-    // update(product: UpdateProduct) {
-    //     return this.productModel.findOneAndUpdate({_id: product._id}, {$set: product}, {useFindAndModify: false}).exec();
-    // }
+    update(product: UpdateProduct) {
+        product.sku = new ObjectId(product.sku)
+        return this.productModel.findOneAndUpdate({sku: product.sku}, {$set: product}, {useFindAndModify: false}).exec();
+    }
 
     // delete(id: Types.ObjectId) {
     //     return this.productModel.findByIdAndDelete({_id: id}).exec();
