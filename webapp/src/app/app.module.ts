@@ -10,7 +10,7 @@ import { AppService } from './app.service'
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/uuol'),
+    MongooseModule.forRoot('mongodb+srv://uuol:2ZqL8TKs7Lo6TWcM@catalog.j1eua.mongodb.net/uuol?retryWrites=true&w=majority'),
     GraphQLModule.forRoot({    
         include: [ProductsModule],
         autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
