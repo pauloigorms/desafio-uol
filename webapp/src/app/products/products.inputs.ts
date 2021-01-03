@@ -31,7 +31,7 @@ export class CreateProduct {
 export class ListProducts {
 
     @Field(() => String, { nullable: true })
-    sku?: string;
+    sku?: Types.ObjectId;
 
     @Field(() => String, { nullable: true })
     name?: string;
@@ -56,11 +56,8 @@ export class ListProducts {
 @InputType()
 export class UpdateProduct {
 
-    // @Field(() => String)
-    // _id: Types.ObjectId;
-
     @Field(() => String, { nullable: true })
-    sku?: string;
+    sku?: Types.ObjectId;
 
     @Field(() => String, { nullable: true })
     name?: string;
