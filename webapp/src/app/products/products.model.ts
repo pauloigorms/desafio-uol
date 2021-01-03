@@ -1,17 +1,13 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
 import { Field, ObjectType } from '@nestjs/graphql';
 import { Document, Types } from 'mongoose';
 
 @ObjectType()
 @Schema()
 export class Product {
-
-    @Field(() => String)
-    _id: Types.ObjectId;
   
     @Field(() => String)
-    @Prop()
-    sku: string;
+    sku: Types.ObjectId;
 
     @Field(() => String)
     @Prop()

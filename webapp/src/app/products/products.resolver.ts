@@ -26,14 +26,14 @@ export class ProductsResolver {
         return this.productService.create(product);
     }
 
-    @Mutation(() => Product)
-    async uproduct(@Args('product') product: UpdateProduct) {
-        return this.productService.update(product);
-    }
+    // @Mutation(() => Product)
+    // async uproduct(@Args('product') product: UpdateProduct) {
+    //     return this.productService.update(product);
+    // }
 
-    @Mutation(() => String)
-    async rproduct(@Args('id', { type: () => String }) id: Types.ObjectId) {
-        return this.productService.delete(id);
-    }
+    // @Mutation(() => String)
+    // async rproduct(@Args('id', { type: () => String }) id: Types.ObjectId) {
+    //     return this.productService.delete(id);
+    // }
 
 }
