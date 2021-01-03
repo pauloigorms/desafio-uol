@@ -16,8 +16,7 @@ export class ProductsResolver {
     constructor(private productService: ProductsService) {}
 
     @Query(() => [Product])
-    async products(
-        @Args('filters', { nullable: true }) filters?: ListProducts,) {
+    async products(@Args('filters', { nullable: true }) filters?: ListProducts) {
         return await this.productService.list(filters);
     }
 
@@ -25,6 +24,12 @@ export class ProductsResolver {
     async nproduct(@Args('product') product?: CreateProduct) {
         return this.productService.create(product);
     }
+
+    @Query(() => Product)
+    async product(@Args('sku', { type: () => String }) sku: Types.ObjectId) {
+        return await this.productService.bySku(sku);
+    }
+    
 
     // @Mutation(() => Product)
     // async uproduct(@Args('product') product: UpdateProduct) {

@@ -7,6 +7,7 @@ import { Document, Types } from 'mongoose';
 export class Product {
   
     @Field(() => String)
+    @Prop()
     sku: Types.ObjectId;
 
     @Field(() => String)

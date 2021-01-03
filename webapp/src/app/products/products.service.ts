@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
+import { ObjectId } from 'bson';
 
 import { Product, ProductDocument } from './products.model';
 
@@ -23,6 +24,10 @@ export class ProductsService {
     
     list(filters: ListProducts) {
         return this.productModel.find({ ...filters }).exec();
+    }
+
+    bySku(sku: Types.ObjectId) {
+        return this.productModel.findOne({sku: new ObjectId(sku)})
     }
 
     // update(product: UpdateProduct) {
