@@ -1,29 +1,29 @@
-import { Field, InputType } from '@nestjs/graphql';
-import { Types } from 'mongoose';
+import { Field, InputType } from '@nestjs/graphql'
+import { Types } from 'mongoose'
 
 @InputType()
 export class CreateProduct {
 
     @Field(() => String, { nullable: true })
-    sku?: Types.ObjectId;
+    sku?: Types.ObjectId
 
     @Field(() => String, { nullable: true })
-    name?: string;
+    name?: string
 
     @Field(() => String, { nullable: true })
-    description?: string;
+    description?: string
 
     @Field(() => Boolean, { nullable: true })
-    is_active?: boolean;
+    is_active?: boolean
 
     @Field(() => Number, { nullable: true })
-    price?: number;
+    price?: number
 
     @Field(() => Number, { nullable: true })
-    weigth?: number;
+    weigth?: number
 
     @Field(() => Number, { nullable: true })
-    status?: number;
+    status?: number
 
 }
 
@@ -31,25 +31,25 @@ export class CreateProduct {
 export class ListProducts {
 
     @Field(() => String, { nullable: true })
-    sku?: Types.ObjectId;
+    sku?: Types.ObjectId
 
     @Field(() => String, { nullable: true })
-    name?: string;
+    name?: string
 
     @Field(() => String, { nullable: true })
-    description?: string;
+    description?: string
 
     @Field(() => Boolean, { nullable: true })
-    is_active?: boolean;
+    is_active?: boolean
 
     @Field(() => Number, { nullable: true })
-    price?: number;
+    price?: number
 
     @Field(() => Number, { nullable: true })
-    weigth?: number;
+    weigth?: number
 
     @Field(() => Number, { nullable: true })
-    status?: number;
+    status?: number
 
 }
 
@@ -57,23 +57,24 @@ export class ListProducts {
 export class UpdateProduct {
 
     @Field(() => String, { nullable: true })
-    sku?: Types.ObjectId;
+    sku?: Types.ObjectId
 
     @Field(() => String, { nullable: true })
-    name?: string;
+    name?: string
 
     @Field(() => String, { nullable: true })
-    description?: string;
+    description?: string
 
     @Field(() => Boolean, { nullable: true })
-    is_active?: boolean;
+    is_active?: boolean
 
     @Field(() => Number, { nullable: true })
-    price?: number;
+    price?: number
 
     @Field(() => Number, { nullable: true })
-    weigth?: number;
+    weigth?: number
 
     @Field(() => Number, { nullable: true })
-    status?: number;
+    status?: number
+
 }

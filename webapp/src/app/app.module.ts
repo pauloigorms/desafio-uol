@@ -1,12 +1,12 @@
-import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
+import { Module } from '@nestjs/common'
+import { MongooseModule } from '@nestjs/mongoose'
+import { GraphQLModule } from '@nestjs/graphql'
+import { join } from 'path'
 
-import { ProductsModule } from './products/products.module';
+import { ProductsModule } from './products/products.module'
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 
 @Module({
   imports: [

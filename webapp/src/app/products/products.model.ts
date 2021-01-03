@@ -1,6 +1,6 @@
-import { Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
-import { Field, ObjectType } from '@nestjs/graphql';
-import { Document, Types } from 'mongoose';
+import { Prop, Schema, SchemaFactory} from '@nestjs/mongoose'
+import { Field, ObjectType } from '@nestjs/graphql'
+import { Document, Types } from 'mongoose'
 
 @ObjectType()
 @Schema()
@@ -8,33 +8,33 @@ export class Product {
   
     @Field(() => String)
     @Prop()
-    sku: Types.ObjectId;
+    sku: Types.ObjectId
 
     @Field(() => String)
     @Prop()
-    name: string;
+    name: string
 
     @Field(() => String)
     @Prop()
-    description: string;
+    description: string
 
     @Field(() => Boolean)
     @Prop()
-    is_active: boolean;
+    is_active: boolean
 
     @Field(() => Number)
     @Prop()
-    price: number;
+    price: number
 
     @Field(() => Number)
     @Prop()
-    weigth: number;
+    weigth: number
 
     @Field(() => Number)
     @Prop()
-    status: number;
+    status: number
   
 }
 
-export type ProductDocument = Product & Document;
-export const ProductSchema = SchemaFactory.createForClass(Product);
+export type ProductDocument = Product & Document
+export const ProductSchema = SchemaFactory.createForClass(Product)
