@@ -40,7 +40,7 @@ type Product {
 
 type Query {
   product(sku: String!): Product!
-  products(filters: ListProducts): [Product!]!
+  products(filters: ListProducts!): [Product!]!
 }
 
 input UpdateProduct {
