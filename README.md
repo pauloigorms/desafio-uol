@@ -118,7 +118,7 @@ Para executar o projeto, siga essencialmente estes passos:
 
 	 - **getProducts** – para obter todos os produtos cadastrados, execute:
 		 ```
-		 query {
+		query {
 			products(filters: {}) {
 				sku
 				description
@@ -128,7 +128,7 @@ Para executar o projeto, siga essencialmente estes passos:
 				weigth
 				status
 			} 
-		 }
+		}
 		```
 		Além disso, caso queira filtrar por algo específico ou passar alguma condição de retorno, insira como parâmetro do *filter* conforme exemplificado abaixo:
 		```
