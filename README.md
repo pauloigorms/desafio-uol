@@ -73,7 +73,7 @@ Criar um repositório no github e seguir as recomendações abaixo:
 |Docker-Compose | `v1.27.4` / `v3.8` | [Leia +](https://docs.docker.com/compose/) |
 
 
-
+Para facilitar a execução do projeto, foi utilizado o Atlas Cloud do [MongoDB](https://www.mongodb.com/cloud/atlas), desta forma o projeto apenas consulta a base de dados sem necessitar que tenha uma ambiente previamente configurado.
 
 ### EXECUTANDO O PROJETO
 
