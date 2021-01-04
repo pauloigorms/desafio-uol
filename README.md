@@ -91,6 +91,10 @@ Para executar o projeto, siga essencialmente estes passos:
   - Aguarde até que todo o contêiner seja construído, após isso acesse em seu navegar o seguinte endereço:
 	  [http://localhost:3000/graphql](http://localhost:3000/graphql)
 
+	Ilustrando os passos descritos até aqui.
+
+	<img src="./imgs/start.png" height="250">
+
  - Para testar as funcionalidades da API use as sequintes *queries* ou *mutations*;
      - **createProduct**  – para testar a função de criação, use esse trecho como exemplo:
 		 ```
@@ -109,7 +113,9 @@ Para executar o projeto, siga essencialmente estes passos:
 		   }
 		}
 		 ```
-	 
+
+		<img src="./imgs/create.png">
+
 	 - **getProducts** – para obter todos os produtos cadastrados, execute:
 		 ```
 		 query {
@@ -135,6 +141,8 @@ Para executar o projeto, siga essencialmente estes passos:
 		 }
 		```
 
+		<img src="./imgs/getall.png">
+
 	  - **getProductBySku** – para obter um produto específico usando como parâmetro o *sku*, i. e., o código identificador, pode-se utilizar o seguinte trecho:
 	    ```
 	    query {
@@ -150,6 +158,8 @@ Para executar o projeto, siga essencialmente estes passos:
 		 }
 		```
 
+		<img src="./imgs/getone.png">
+
    - **updateProduct** – para atualizar um produto basta passar o *sku* e os campos que deseja atualizar, veja como:
 	 ```
 	 mutation {
@@ -160,12 +170,16 @@ Para executar o projeto, siga essencialmente estes passos:
 	 }
 	 ```
 
+	 <img src="./imgs/update.png">
+
    - **deleteProduct** – para deletar um produto basta enviar o código identificador como parâmetro.
      ```
 	 mutation {
 		rproduct(sku: code_id)
 	 }
      ```
+
+	 <img src="./imgs/delete.png">
 
 
 *Desenvolvido com* ❤️ *por [Paulo Moraes](http://pauloigorms.github.io/).* 
