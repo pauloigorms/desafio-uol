@@ -120,20 +120,20 @@ Para executar o projeto, siga essencialmente estes passos:
 		 ```
 		 query {
 			products(filters: {}) {
-				 sku
-				 description
-				 name
-				 is_active
-				 price
-				 weigth
-				 status
+				sku
+				description
+				name
+				is_active
+				price
+				weigth
+				status
 			} 
 		 }
 		```
 		Além disso, caso queira filtrar por algo específico ou passar alguma condição de retorno, insira como parâmetro do *filter* conforme exemplificado abaixo:
 		```
 		query {
-			 products(filters: { is_active: true }) {
+			products(filters: { is_active: true }) {
 				sku
 				name
 				is_active
@@ -146,7 +146,7 @@ Para executar o projeto, siga essencialmente estes passos:
 	  - **getProductBySku** – para obter um produto específico usando como parâmetro o *sku*, i. e., o código identificador, pode-se utilizar o seguinte trecho:
 	    ```
 	    query {
-			 product(sku: code_id) {
+			product(sku: code_id) {
 				sku
 			    description
 			    name
@@ -163,10 +163,10 @@ Para executar o projeto, siga essencialmente estes passos:
    - **updateProduct** – para atualizar um produto basta passar o *sku* e os campos que deseja atualizar, veja como:
 	 ```
 	 mutation {
-		  uproduct(product: { sku: code_id, status: 0} {
-		     sku
-		     status
-		  }
+		uproduct(product: { sku: code_id, status: 0} {
+		    sku
+		    status
+		}
 	 }
 	 ```
 
