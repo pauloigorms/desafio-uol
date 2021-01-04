@@ -73,7 +73,7 @@ Criar um repositório no github e seguir as recomendações abaixo:
 |Docker-Compose | `v1.27.4` / `v3.8` | [Leia +](https://docs.docker.com/compose/) |
 
 
-
+Para facilitar a execução do projeto, foi utilizado o Atlas Cloud do [MongoDB](https://www.mongodb.com/cloud/atlas), desta forma o projeto apenas consulta a base de dados sem necessitar que tenha uma ambiente previamente configurado.
 
 ### EXECUTANDO O PROJETO
 
@@ -90,6 +90,10 @@ Para executar o projeto, siga essencialmente estes passos:
 
   - Aguarde até que todo o contêiner seja construído, após isso acesse em seu navegar o seguinte endereço:
 	  [http://localhost:3000/graphql](http://localhost:3000/graphql)
+
+	Ilustrando os passos descritos até aqui.
+
+	<img src="https://github.com/pauloigorms/desafio-uol/blob/develop/imgs/start.PNG">
 
  - Para testar as funcionalidades da API use as sequintes *queries* ou *mutations*;
      - **createProduct**  – para testar a função de criação, use esse trecho como exemplo:
@@ -109,25 +113,27 @@ Para executar o projeto, siga essencialmente estes passos:
 		   }
 		}
 		 ```
-	 
+
+		<img src="https://github.com/pauloigorms/desafio-uol/blob/develop/imgs/create.PNG">
+
 	 - **getProducts** – para obter todos os produtos cadastrados, execute:
 		 ```
-		 query {
+		query {
 			products(filters: {}) {
-				 sku
-				 description
-				 name
-				 is_active
-				 price
-				 weigth
-				 status
+				sku
+				description
+				name
+				is_active
+				price
+				weigth
+				status
 			} 
-		 }
+		}
 		```
 		Além disso, caso queira filtrar por algo específico ou passar alguma condição de retorno, insira como parâmetro do *filter* conforme exemplificado abaixo:
 		```
 		query {
-			 products(filters: { is_active: true }) {
+			products(filters: { is_active: true }) {
 				sku
 				name
 				is_active
@@ -135,10 +141,12 @@ Para executar o projeto, siga essencialmente estes passos:
 		 }
 		```
 
+		<img src="https://github.com/pauloigorms/desafio-uol/blob/develop/imgs/getall.PNG">
+
 	  - **getProductBySku** – para obter um produto específico usando como parâmetro o *sku*, i. e., o código identificador, pode-se utilizar o seguinte trecho:
 	    ```
 	    query {
-			 product(sku: code_id) {
+			product(sku: code_id) {
 				sku
 			    description
 			    name
@@ -150,15 +158,19 @@ Para executar o projeto, siga essencialmente estes passos:
 		 }
 		```
 
+		<img src="https://github.com/pauloigorms/desafio-uol/blob/develop/imgs/getone.PNG">
+
    - **updateProduct** – para atualizar um produto basta passar o *sku* e os campos que deseja atualizar, veja como:
 	 ```
 	 mutation {
-		  uproduct(product: { sku: code_id, status: 0} {
-		     sku
-		     status
-		  }
+		uproduct(product: { sku: code_id, status: 0} {
+		    sku
+		    status
+		}
 	 }
 	 ```
+
+	 <img src="https://github.com/pauloigorms/desafio-uol/blob/develop/imgs/update.PNG">
 
    - **deleteProduct** – para deletar um produto basta enviar o código identificador como parâmetro.
      ```
@@ -166,6 +178,8 @@ Para executar o projeto, siga essencialmente estes passos:
 		rproduct(sku: code_id)
 	 }
      ```
+
+	 <img src="https://github.com/pauloigorms/desafio-uol/blob/develop/imgs/delete.PNG">
 
 
 *Desenvolvido com* ❤️ *por [Paulo Moraes](http://pauloigorms.github.io/).* 
